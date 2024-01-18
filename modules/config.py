@@ -55,7 +55,7 @@ def try_load_deprecated_user_path_config():
         replace_config('fooocus_expansion_path', 'path_fooocus_expansion')
         replace_config('temp_outputs_path', 'path_outputs')
 
-        if deprecated_config_dict.get("default_model", None) == 'juggernautXL_version6Rundiffusion.safetensors':
+        if deprecated_config_dict.get("default_model", None) == 'rakibuniversev15.safetensors':
             os.replace('user_path_config.txt', 'user_path_config-deprecated.txt')
             print('Config updated successfully in silence. '
                   'A backup of previous config is written to "user_path_config-deprecated.txt".')
@@ -153,7 +153,7 @@ def get_config_item_or_set_default(key, default_value, validator, disable_empty_
 
 default_base_model_name = get_config_item_or_set_default(
     key='default_model',
-    default_value='juggernautXL_version6Rundiffusion.safetensors',
+    default_value='rakibuniversev15.safetensors',
     validator=lambda x: isinstance(x, str)
 )
 default_refiner_model_name = get_config_item_or_set_default(
@@ -250,13 +250,13 @@ default_max_image_number = get_config_item_or_set_default(
 )
 default_image_number = get_config_item_or_set_default(
     key='default_image_number',
-    default_value=2,
+    default_value=1,
     validator=lambda x: isinstance(x, int) and 1 <= x <= default_max_image_number
 )
 checkpoint_downloads = get_config_item_or_set_default(
     key='checkpoint_downloads',
     default_value={
-        "juggernautXL_version6Rundiffusion.safetensors": "https://huggingface.co/lllyasviel/fav_models/resolve/main/fav/juggernautXL_version6Rundiffusion.safetensors"
+        "rakibuniversev15.safetensors": "https://huggingface.co/rafiislam/RakibUniverse/resolve/main/rakibuniversev15.safetensors?download=true"
     },
     validator=lambda x: isinstance(x, dict) and all(isinstance(k, str) and isinstance(v, str) for k, v in x.items())
 )
@@ -285,7 +285,7 @@ available_aspect_ratios = get_config_item_or_set_default(
 )
 default_aspect_ratio = get_config_item_or_set_default(
     key='default_aspect_ratio',
-    default_value='1152*896' if '1152*896' in available_aspect_ratios else available_aspect_ratios[0],
+    default_value='1280*768' if '1280*768' in available_aspect_ratios else available_aspect_ratios[0],
     validator=lambda x: x in available_aspect_ratios
 )
 default_inpaint_engine_version = get_config_item_or_set_default(
