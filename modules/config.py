@@ -170,7 +170,7 @@ default_loras = get_config_item_or_set_default(
     key='default_loras',
     default_value=[
         [
-            "sd_xl_offset_example-lora_1.0.safetensors",
+            "Rakib_Details_2.safetensors",
             0.1
         ],
         [
@@ -263,7 +263,7 @@ checkpoint_downloads = get_config_item_or_set_default(
 lora_downloads = get_config_item_or_set_default(
     key='lora_downloads',
     default_value={
-        "sd_xl_offset_example-lora_1.0.safetensors": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_offset_example-lora_1.0.safetensors"
+        "Rakib_Details_2.safetensors": "https://huggingface.co/rafiislam/RakibUniverse/resolve/main/Rakib_Details.safetensors?download=true"
     },
     validator=lambda x: isinstance(x, dict) and all(isinstance(k, str) and isinstance(v, str) for k, v in x.items())
 )
