@@ -223,7 +223,7 @@ default_styles = get_config_item_or_set_default(
 )
 default_prompt_negative = get_config_item_or_set_default(
     key='default_prompt_negative',
-    default_value='',
+    default_value='(low quality, worst quality), EasyNegativeV2,Low quality, ugly, grainy, twins, long neck, malformed eyes, malformed mouth, malformed hands, deformations, text, signature, broken, holey, frame, graphic, old detail, f/4, romantic peace, overexposed angles, carpet.',
     validator=lambda x: isinstance(x, str),
     disable_empty_as_none=True
 )
@@ -275,7 +275,7 @@ embeddings_downloads = get_config_item_or_set_default(
 available_aspect_ratios = get_config_item_or_set_default(
     key='available_aspect_ratios',
     default_value=[
-        '704*1408','768*1024', '1024*768','856*1280','1280*856','704*1344', '768*1344', '768*1280', '832*1216', '832*1152',
+        '720*1280','1280*720','768*1024', '1024*768','856*1280','1280*856','704*1344', '768*1344', '768*1280', '832*1216', '832*1152',
         '896*1152', '896*1088', '960*1088', '960*1024', '1024*1024', '1024*960',
         '1088*960', '1088*896', '1152*896', '1152*832', '1216*832', '1280*768',
         '1344*768', '1344*704', '1408*704', '1472*704', '1536*640', '1600*640',
